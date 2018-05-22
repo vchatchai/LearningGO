@@ -1,0 +1,92 @@
+[
+    {
+        "paymentOrders": [
+            {
+                "createdBy": "31527",
+                "createdDate": "Oct 18, 2017 10:20:28 AM",
+                "requestPaymentDate": "Oct 18, 2017 10:20:28 AM",
+                "paymentType": {
+                    "code": "01",
+                    "desc": "เช่าซื้อ",
+                    "descEn": "เช่าซื้อ",
+                    "sortIndex": 1,
+                    "isActive": true,
+                    "id": 3
+                },
+                "paymentTypeDesc": "เช่าซื้อ",
+                "paymentOrderItems": [
+                    {
+                        "contractNo": "0117002739",
+                        "paymentCode": "0101",
+                        "paymentCodeDesc": "ชำระเจ้าหนี้ทรัพย์สินให้เช่าซื้อ-รถจักรยานยนต์\r\n",
+                        "amount": 81331.7757,
+                        "withholdingTaxRate": 0,
+                        "vatRate": 0.07,
+                        "createdBy": "31527",
+                        "createdDate": "Oct 18, 2017 10:20:28 AM"
+                    }
+                ],
+                "payeeAccountHolder": {
+                    "createdBy": "Admin",
+                    "createdDate": "Aug 17, 2016 7:07:00 AM",
+                    "updatedBy": "Admin",
+                    "updatedDate": "Aug 17, 2016 7:07:00 AM",
+                    "taxId": "0105530006174",
+                    "address": "1/11  ถนนบรมราชชนนี อรุณอมรินทร์ บางกอกน้อย กรุงเทพมหานคร 10700",
+                    "accountHolderType": "Company",
+                    "id": 390,
+                    "name": "บริษัท ราชามอเตอร์ไซค์ (1987) จำกัด",
+                    "nameEn": "บริษัท ราชามอเตอร์ไซค์ (1987) จำกัด"
+                },
+                "totalAmount": -87025.0,
+                "totalWithholdingTaxAmount": 0,
+                "totalVatAmount": 0
+            },
+            {
+                "createdBy": "31527",
+                "createdDate": "Oct 18, 2017 10:20:28 AM",
+                "requestPaymentDate": "Oct 18, 2017 10:20:28 AM",
+                "paymentType": {
+                    "code": "01",
+                    "desc": "เช่าซื้อ",
+                    "descEn": "เช่าซื้อ",
+                    "sortIndex": 1,
+                    "isActive": true,
+                    "id": 3
+                },
+                "paymentTypeDesc": "เช่าซื้อ",
+                "paymentOrderItems": [
+                    {
+                        "contractNo": "0117002738",
+                        "paymentCode": "0101",
+                        "paymentCodeDesc": "ชำระเจ้าหนี้ทรัพย์สินให้เช่าซื้อ-รถจักรยานยนต์\r\n",
+                        "amount": 71028.0374,
+                        "withholdingTaxRate": 0,
+                        "vatRate": 0.07,
+                        "createdBy": "31527",
+                        "createdDate": "Oct 18, 2017 10:20:28 AM"
+                    }
+                ],
+                "payeeAccountHolder": {
+                    "createdBy": "Admin",
+                    "createdDate": "Aug 17, 2016 7:07:00 AM",
+                    "updatedBy": "Admin",
+                    "updatedDate": "Aug 26, 2017 8:38:38 PM",
+                    "taxId": "0125528000245",
+                    "address": " 401/18ถนนสุรนารายณ์ ตำบล ในเมือง อำเภอ เมืองนครราชสีมา จังหวัด นครราชสีมา รหัสไปรษณีย์ 30000",
+                    "accountHolderType": "Company",
+                    "id": 111,
+                    "name": "บริษัท เจริญวัฒนามอเตอร์ จำกัด",
+                    "nameEn": "Charoen Wattana Motor"
+                },
+                "totalAmount": -76000.0,
+                "totalWithholdingTaxAmount": 0,
+                "totalVatAmount": 0
+            }
+        ],
+        "requestedBy": "31527",
+        "requestedDate": "Oct 18, 2017 10:20:28 AM",
+        "createdBy": "31527",
+        "createdDate": "Oct 18, 2017 10:20:28 AM"
+    }
+]
