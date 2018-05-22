@@ -1,2 +1,2 @@
 # LearningGO
-This repository is example for learn go language sine the last year
+This repository is example for learn go language since the last year
