@@ -193,8 +193,8 @@ func main() {
 	// routine.Mutex()
 	// web.Template()
 	// storage.Gob()
-	storage.CRUD()
-
+	// storage.CRUD()
+		storage.CRUD2()
 	// web.Cookies()
 
 	// status, err := os.Stat("key.pem")
