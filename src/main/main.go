@@ -194,7 +194,9 @@ func main() {
 	// web.Template()
 	// storage.Gob()
 	// storage.CRUD()
-		storage.CRUD2()
+		// storage.CRUD2()
+	// storage.SQLX()
+	storage.GORM()
 	// web.Cookies()
 
 	// status, err := os.Stat("key.pem")
