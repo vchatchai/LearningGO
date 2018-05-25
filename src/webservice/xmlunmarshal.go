@@ -12,7 +12,8 @@ type Post struct {  //#A
 	Id string `xml:"id,attr"`
 	Content string `xml:"content"`
 	Author Author  `xml:"author"`
-	Xml string `xml:",innerxml"`
+	// Xml string `xml:",innerxml"`
+	Comments []Comment `xml,"comments->comment"`
 }
 
 type Author struct {
@@ -21,9 +22,15 @@ type Author struct {
 
 }
 
-func XML() {
+type Comment struct {
+	Id string `xml:"id,attr"`
+	Content string `xml:"content"`
+	Author Author `xml:"author"`
+}
+
+func Unmarshal() {
 	fmt.Println("Start XML")
-	xmlFile, err := os.Open("post.xml")
+	xmlFile, err := os.Open("post2.xml")
 	if err != nil {
 		fmt.Println("Err opening XML file:", err)
 		return
@@ -36,8 +43,7 @@ func XML() {
 		return
 	}
 
-	fmt.Println(xmlData)
-
+	fmt.Println(string(xmlData))
 	var post Post
 	xml.Unmarshal(xmlData, &post)
 	fmt.Println(post)
@@ -47,7 +53,7 @@ func XML() {
 		panic(err)
 	}
 
-	fmt.Println(string(xml[:]))
+	fmt.Println(string(xml))
 
 
 }
