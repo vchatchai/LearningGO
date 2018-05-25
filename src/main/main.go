@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"math"
-	"net/http"
-	"storage"
+	"net/http" 
+	"webservice"
 	"time"
 )
 
@@ -196,7 +196,8 @@ func main() {
 	// storage.CRUD()
 		// storage.CRUD2()
 	// storage.SQLX()
-	storage.GORM()
+	// storage.GORM()
+	webservice.XML()
 	// web.Cookies()
 
 	// status, err := os.Stat("key.pem")
