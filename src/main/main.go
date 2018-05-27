@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 	"math"
-	"net/http" 
-	"webservice"
+	"net/http"
 	"time"
+	"webservice"
 )
 
 // var plus = add
@@ -194,12 +194,13 @@ func main() {
 	// web.Template()
 	// storage.Gob()
 	// storage.CRUD()
-		// storage.CRUD2()
+	// storage.CRUD2()
 	// storage.SQLX()
 	// storage.GORM()
-	webservice.Unmarshal()
+	// webservice.Unmarshal()
+	// webservice.Marshal()
+	webservice.JsonMarshal()
 	// web.Cookies()
-
 	// status, err := os.Stat("key.pem")
 	// fmt.Println("isExist", status.IsDir(), "err", os.IsExist(err))
 }

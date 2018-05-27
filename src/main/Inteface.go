@@ -10,7 +10,6 @@ import (
 	"os"
 	"strings"
 	"time"
-
 	"golang.org/x/tour/pic"
 )
 

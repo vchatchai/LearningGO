@@ -1,31 +1,30 @@
 package webservice
 
 import (
-	"io/ioutil"
-	"os"
 	"encoding/xml"
 	"fmt"
+	"io/ioutil"
+	"os"
 )
 
-type Post struct {  //#A
-	XMLName xml.Name `xml:"post"`
-	Id string `xml:"id,attr"`
-	Content string `xml:"content"`
-	Author Author  `xml:"author"`
-	// Xml string `xml:",innerxml"`
+type Post struct { //#A
+	XMLName  xml.Name  `xml:"post"`
+	Id       string    `xml:"id,attr",json:"id"`
+	Content  string    `xml:"content"`
+	Author   Author    `xml:"author"`
+	Xml      string    `xml:",innerxml"`
 	Comments []Comment `xml,"comments->comment"`
 }
 
 type Author struct {
-	Id string  `xml:"id,attr"`
+	Id   string `xml:"id,attr"`
 	Name string `xml:",chardata"`
-
 }
 
 type Comment struct {
-	Id string `xml:"id,attr"`
+	Id      string `xml:"id,attr"`
 	Content string `xml:"content"`
-	Author Author `xml:"author"`
+	Author  Author `xml:"author"`
 }
 
 func Unmarshal() {
@@ -36,7 +35,7 @@ func Unmarshal() {
 		return
 	}
 
-	defer  xmlFile.Close()
+	defer xmlFile.Close()
 	xmlData, err := ioutil.ReadAll(xmlFile)
 	if err != nil {
 		panic(err)
@@ -54,6 +53,5 @@ func Unmarshal() {
 	}
 
 	fmt.Println(string(xml))
-
 
 }
