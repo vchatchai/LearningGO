@@ -8,12 +8,12 @@ import (
 )
 
 type Post struct { //#A
-	XMLName  xml.Name  `xml:"post"`
-	Id       string    `xml:"id,attr",json:"id"`
-	Content  string    `xml:"content"`
-	Author   Author    `xml:"author"`
-	Xml      string    `xml:",innerxml"`
-	Comments []Comment `xml,"comments->comment"`
+	XMLName  xml.Name  `xml:"post" json:"-"`
+	Id       string    `xml:"id,attr" json:"id"`
+	Content  string    `xml:"content" json:"content"`
+	Author   Author    `xml:"author" json:"author"`
+	Xml      string    `xml:",innerxml" json:"-"`
+	Comments []Comment `xml:"comments>comment" json:"comments"`
 }
 
 type Author struct {
@@ -52,6 +52,7 @@ func Unmarshal() {
 		panic(err)
 	}
 
+	fmt.Println("Marchal:")
 	fmt.Println(string(xml))
 
 }
