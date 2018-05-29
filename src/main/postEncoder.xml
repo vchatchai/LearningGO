@@ -1,0 +1,14 @@
+<post id="1">
+	<content>Ni Hao</content>
+	<author id="2">Mao</author>
+	<comments>
+		<comment id="01">
+			<content>Comment</content>
+			<author id="3">Yang</author>
+		</comment>
+		<comment id="02">
+			<content>Discuss</content>
+			<author id="3">Ming</author>
+		</comment>
+	</comments>
+</post>

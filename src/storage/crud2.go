@@ -16,7 +16,7 @@ type Comment struct {
 	Id int 
 	Content string
 	Author string
-	Topic *Topic
+	Topic *Topic `json:"-"`
 }
  
 func (comment *Comment) Create() (err error){
@@ -43,6 +43,7 @@ func GetTopic(id int) (topic Topic, err error){
 	topic.Comments = []Comment{}
 
 	query := "SELECT id, content, author from topic where id = $1"
+	fmt.Println(query, id)
 	err = Db.QueryRow(query, id).Scan(&topic.Id, &topic.Content, &topic.Author)
 	if err != nil {
 		panic(err)
@@ -50,6 +51,7 @@ func GetTopic(id int) (topic Topic, err error){
 	}
 
 	secondQuery := "select id, content, author from comments where topic_id = $1"
+	fmt.Println(secondQuery, id)
 	rows, err := Db.Query(secondQuery, id)
 
 	if err != nil {
@@ -60,13 +62,13 @@ func GetTopic(id int) (topic Topic, err error){
 	for rows.Next() {
 		comment:= Comment{Topic:&topic}
 		err = rows.Scan(&comment.Id, &comment.Content, &comment.Author)
-		if err != nil {
-			panic(err)
+		if err != nil { 
 			return
 		}
 		topic.Comments = append(topic.Comments, comment)
 
 	}
+	fmt.Println("rows.Next() loop done.")
 	rows.Close()
 	return
 }

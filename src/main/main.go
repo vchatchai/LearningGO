@@ -1,26 +1,30 @@
 package main
 
 import (
-	"fmt"
-	"math"
-	"net/http"
-	"time"
 	"webservice"
+	"fmt" 
 )
 
-// var plus = add
+type Name struct {
+	FirstName string
+	LastName string
+}
 
-// func add(x int, y int) int {
-// 	return x + y
-// }
-
-// func init() {
-// 	fmt.Println("Initial1")
-// }
-
+func (name *Name) String() string{
+	fmt.Println(name)
+	return fmt.Sprintln("Mr.",name.FirstName,name.LastName)
+}
 func main() {
 
-	fmt.Println("Start Testing")
+	// name := Name{
+	// 	FirstName: "Chatchai",
+	// 	LastName: "Vichai",
+	// }
+
+	// fmt.Println(name)
+
+
+	// fmt.Println("Start Testing")
 	// testFor()
 	// testForNoInitial()
 
@@ -199,95 +203,17 @@ func main() {
 	// storage.GORM()
 	// webservice.Unmarshal()
 	// webservice.Marshal()
-	webservice.JsonMarshal()
+	// webservice.XMLDecode()
+	// webservice.XMLEncode()
+	// webservice.JsonUnmarshal()
+	// webservice.JsonDecode()
+	// webservice.JsonMarshal()
+	// webservice.JsonEcoder();
+	webservice.WebService()
 	// web.Cookies()
 	// status, err := os.Stat("key.pem")
 	// fmt.Println("isExist", status.IsDir(), "err", os.IsExist(err))
+
 }
 
-type Vertex struct {
-	Lat, Long float64
-}
-
-const (
-	PORT = ":8080"
-)
-
-func TestHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("TestHandler")
-}
-
-func serveStatic(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "static.html")
-}
-
-func serveDynamic(w http.ResponseWriter, r *http.Request) {
-	response := "The time is now " + time.Now().String()
-	fmt.Fprint(w, response)
-}
-
-func Pic(dx, dy int) [][]uint8 {
-	x := [][]uint8{}
-	for i := 0; i < dy; i++ {
-		row := []uint8{}
-		for j := 0; j < dx; j++ {
-			row = append(row, uint8(i^j*2))
-		}
-		x = append(x, row)
-	}
-	return x
-}
-
-type Circle struct {
-	x float64
-	y float64
-	r float64
-}
-
-func (c *Circle) area() float64 {
-	return math.Pi * c.r * c.r
-}
-
-// Here's a basic interface for geometric shapes.
-type geometry interface {
-	area() float64
-	perim() float64
-}
-
-// For our example we'll implement this interface on
-// `rect` and `circle` types.
-type rect struct {
-	width, height float64
-}
-type circle struct {
-	radius float64
-}
-
-// To implement an interface in Go, we just need to
-// implement all the methods in the interface. Here we
-// implement `geometry` on `rect`s.
-func (r rect) area() float64 {
-	return r.width * r.height
-}
-func (r rect) perim() float64 {
-	return 2*r.width + 2*r.height
-}
-
-// The implementation for `circle`s.
-func (c circle) area() float64 {
-	return math.Pi * c.radius * c.radius
-}
-
-func (c circle) perim() float64 {
-	return 2 * math.Pi * c.radius
-}
-
-// If a variable has an interface type, then we can call
-// methods that are in the named interface. Here's a
-// generic `measure` function taking advantage of this
-// to work on any `geometry`.
-func measure(g geometry) {
-	fmt.Println(g)
-	fmt.Println(g.area())
-	// fmt.Println(g.perim())
-}
+ 
