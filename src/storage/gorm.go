@@ -2,9 +2,10 @@ package storage
 
 import (
 	"fmt"
+	"time"
+
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"
-	"time"
 )
 
 func init() {
@@ -23,7 +24,7 @@ type Discuss struct {
 	Id        int
 	Content   string
 	Author    string `sql:"not null"`
-	IssueId    int    `sql:"index"`
+	IssueId   int    `sql:"index"`
 	CreatedAt time.Time
 }
 
@@ -31,18 +32,18 @@ var Dbg *gorm.DB
 
 func init() {
 	fmt.Println("init gorm start")
-	var err error
-	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
-		"password=%s dbname=%s sslmode=disable",
-		host, port, user, password, dbname)
-	Dbg, err = gorm.Open("postgres", psqlInfo)
-	if err != nil {
-		panic(err)
-	}
+	// var err error
+	// psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
+	// 	"password=%s dbname=%s sslmode=disable",
+	// 	host, port, user, password, dbname)
+	// Dbg, err = gorm.Open("postgres", psqlInfo)
+	// if err != nil {
+	// 	panic(err)
+	// }
 
-	Dbg.AutoMigrate(&Issue{}, &Discuss{})
+	// Dbg.AutoMigrate(&Issue{}, &Discuss{})
 
-	fmt.Println("init gorm done.")
+	// fmt.Println("init gorm done.")
 }
 
 func GORM() {
