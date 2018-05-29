@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func JsonMarshal() {
+func JsonUnmarshal() {
 
 	file, err := os.Open("post.json")
 
@@ -27,5 +27,13 @@ func JsonMarshal() {
 	}
 
 	fmt.Println(post)
+
+
+	marshal, err := json.Marshal(&post)
+
+	fmt.Println("Marshal:", string(marshal))
+
+
+
 
 }
