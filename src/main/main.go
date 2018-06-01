@@ -1,18 +1,18 @@
 package main
 
 import (
+	"fmt"
 	"webservice"
-	"fmt" 
 )
 
 type Name struct {
 	FirstName string
-	LastName string
+	LastName  string
 }
 
-func (name *Name) String() string{
+func (name *Name) String() string {
 	fmt.Println(name)
-	return fmt.Sprintln("Mr.",name.FirstName,name.LastName)
+	return fmt.Sprintln("Mr.", name.FirstName, name.LastName)
 }
 func main() {
 
@@ -22,7 +22,6 @@ func main() {
 	// }
 
 	// fmt.Println(name)
-
 
 	// fmt.Println("Start Testing")
 	// testFor()
@@ -206,14 +205,12 @@ func main() {
 	// webservice.XMLDecode()
 	// webservice.XMLEncode()
 	// webservice.JsonUnmarshal()
-	// webservice.JsonDecode()
+	webservice.JsonDecode()
 	// webservice.JsonMarshal()
 	// webservice.JsonEcoder();
-	webservice.WebService()
+	// webservice.WebService()
 	// web.Cookies()
 	// status, err := os.Stat("key.pem")
 	// fmt.Println("isExist", status.IsDir(), "err", os.IsExist(err))
 
 }
-
- 

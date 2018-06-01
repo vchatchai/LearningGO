@@ -1,36 +1,32 @@
 package webservice
 
 import (
-	"io"
 	"encoding/json"
 	"fmt"
+	"io"
 	"os"
 )
 
-
 func JsonDecode() {
 	jsonFile, err := os.Open("post.json")
-	if err != nil { 
+	if err != nil {
 		fmt.Println("Error opening JSON file:", err)
-		return 
+		return
 	}
 	defer jsonFile.Close()
+	post, err := JsonDecoder(jsonFile)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(post)
+
+}
+
+func JsonDecoder(jsonFile io.Reader) (post Post, err error) {
 
 	decoder := json.NewDecoder(jsonFile)
-	count := 1
-	for {
-		var post Post
-		err := decoder.Decode(&post)
+	err = decoder.Decode(&post)
 
-		if err == io.EOF {
-			break
-		}
-
-		if err != nil { 
-			panic(err)
-			return
-		}
-		fmt.Println("<",count, ">",post)
-		count++ 
-	}
+	return
 }
