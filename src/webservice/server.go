@@ -42,11 +42,7 @@ func crudHandler(w http.ResponseWriter, r *http.Request){
 
  func handlePost(w http.ResponseWriter,r *http.Request)(err error){
 	 
-	// body, err  := r.GetBody()
-	// if err  != nil {
-	// 	panic(err)
-	// 	http.Error(w,err.Error(), http.StatusInternalServerError)
-	// }
+	 
 	encoder := json.NewDecoder(r.Body)
 	
 	var topic storage.Topic
@@ -65,10 +61,19 @@ func crudHandler(w http.ResponseWriter, r *http.Request){
 
 	} 
 	fmt.Println(topic)
-	topic.Create()
+	err =	topic.Create()
+	if err != nil {
+		panic(err)
+		w.WriteHeader(404)
+		return
+	}
 	// topic.Comments[0].Create()
 	for _,comment := range topic.Comments {
-		comment.Create()
+		err = comment.Create()
+		if err != nil {
+			panic(err) 
+			return
+		}	
 	}
 
 
