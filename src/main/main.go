@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"webservice"
+	"inputoutput"
 )
 
 type Name struct {
@@ -205,12 +205,15 @@ func main() {
 	// webservice.XMLDecode()
 	// webservice.XMLEncode()
 	// webservice.JsonUnmarshal()
-	webservice.JsonDecode()
+	// webservice.JsonDecode()
+
 	// webservice.JsonMarshal()
 	// webservice.JsonEcoder();
 	// webservice.WebService()
 	// web.Cookies()
 	// status, err := os.Stat("key.pem")
 	// fmt.Println("isExist", status.IsDir(), "err", os.IsExist(err))
+
+	inputoutput.Stdout()
 
 }
