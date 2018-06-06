@@ -33,3 +33,9 @@ func Benchmark_goPrint2(b *testing.B) {
 
 	}
 }
+func Benchmark_goPrint3(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		goPrint3()
+
+	}
+}
