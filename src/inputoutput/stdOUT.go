@@ -1,6 +1,7 @@
 package inputoutput
 
 import (
+	"fmt"
 	"io"
 	"os"
 )
@@ -15,5 +16,7 @@ func Stdout() {
 	}
 
 	io.WriteString(os.Stdout, myString)
+
+	fmt.Fprintf(os.Stdout, "\nTEst %s", myString)
 
 }
