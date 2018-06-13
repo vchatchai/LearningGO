@@ -1,8 +1,8 @@
 package main
 
 import (
+	"cgo"
 	"fmt"
-	"inputoutput"
 )
 
 type Name struct {
@@ -214,6 +214,20 @@ func main() {
 	// status, err := os.Stat("key.pem")
 	// fmt.Println("isExist", status.IsDir(), "err", os.IsExist(err))
 
-	inputoutput.Stdout()
+	// inputoutput.Stdout()
+	// inputoutput.Stdin()
+	// osfunc.Cla()
+	// inputoutput.Stderr()
+	// loging.Syslog()
+	// loging.FatalLog()
+	// error.NewError()
+	// inputoutput.SUM()
+	// inputoutput.Average()
+	// inputoutput.StopBreak()
 
+	// garbage.GColl()
+	// cgo.CGO()
+	// osfunc.GetENV()
+	// osfunc.SetENV("FOO", "FUCKYOU")
+	cgo.CallC()
 }
