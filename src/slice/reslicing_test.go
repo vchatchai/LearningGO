@@ -2,16 +2,16 @@ package slice
 
 import "testing"
 
-func TestCopy(t *testing.T) {
+func TestReslicing(t *testing.T) {
 	tests := []struct {
 		name string
 	}{
-		{"Test copy"},
+		{name: "TestReslice"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			Copy()
-			t.Fatal("")
+			Reslicing()
+			t.Fatal("done")
 		})
 	}
 }

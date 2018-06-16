@@ -25,6 +25,7 @@ func Copy() {
 	array5 := [5]int{5, -5, 5, -5, 5}
 	s7 := []int{7, 7, -7, -7, 7, -7, 7}
 
+	// copy(array5[0:], s7)
 	copy(array5[0:], s7)
 	fmt.Println("array5:", array5)
 	fmt.Println("s7:", s7)
