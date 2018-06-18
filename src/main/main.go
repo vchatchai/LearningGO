@@ -1,8 +1,8 @@
 package main
 
 import (
-	"cgo"
 	"fmt"
+	"slice"
 )
 
 type Name struct {
@@ -229,5 +229,12 @@ func main() {
 	// cgo.CGO()
 	// osfunc.GetENV()
 	// osfunc.SetENV("FOO", "FUCKYOU")
-	cgo.CallC()
+	// cgo.CallC()
+	// deferer.Deferer()
+	// panicRecover.PanicAndRecover()
+	// osfunc.RuntimeEnv()
+	// osfunc.RequiredVersion()
+	fmt.Println("NodeTree")
+
+	slice.Copy()
 }
