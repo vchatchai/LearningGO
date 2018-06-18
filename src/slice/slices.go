@@ -33,6 +33,8 @@ func Slices() {
 		}
 	}
 
+	fmt.Println(twoDs)
+
 	for _, x := range twoD {
 		for i, y := range x {
 			fmt.Println("i:", i, " value:", y)
