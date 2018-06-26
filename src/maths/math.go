@@ -1,4 +1,4 @@
-package math
+package maths
 
 //Average value
 func Average(xs []float64) float64 {
