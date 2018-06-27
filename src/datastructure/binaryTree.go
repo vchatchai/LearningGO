@@ -6,27 +6,25 @@ import (
 	"fmt"
 )
 
-type Node struct {
+type Tree struct {
 	value int
-	left  *Node
-	right *Node
+	left  *Tree
+	right *Tree
 }
 
-// var root = Node{}
-
-func (node *Node) String() string {
-	var deep int = 1
+func (Tree *Tree) String() string {
+	var deep int = 0
 	var buffer bytes.Buffer
 	for {
 
-		nodes := getNode(deep, 0, node)
+		Trees := getTree(deep, 0, Tree)
 
-		if len(nodes) == 0 {
+		if len(Trees) == 0 {
 			return buffer.String()
 		}
-		for _, n := range nodes {
-			buffer.WriteString(string(n.value))
-			buffer.WriteString(" ")
+		for _, n := range Trees {
+			buffer.WriteString(fmt.Sprintf(" %d ", n.value))
+			// buffer.WriteString(" ")
 		}
 		buffer.WriteString("\n")
 		deep++
@@ -34,63 +32,76 @@ func (node *Node) String() string {
 
 }
 
-func getNode(deep, count int, current *Node) []Node {
+func getTree(deep, count int, current *Tree) []Tree {
 
+	trees := []Tree{}
 	if deep == count {
-		return []Node{*current}
+		if current != nil {
+			trees = append(trees, *current)
+		}
+		return trees
 	} else {
-		nodes := make([]Node, deep)
 		count++
 		if current.left != nil {
-			for _, n := range getNode(deep, count, current.left) {
-				nodes = append(nodes, n)
+			for _, n := range getTree(deep, count, current.left) {
+				trees = append(trees, n)
 			}
 		}
 
 		if current.right != nil {
 
-			for _, n := range getNode(deep, count, current.right) {
-				nodes = append(nodes, n)
+			for _, n := range getTree(deep, count, current.right) {
+				trees = append(trees, n)
 
 			}
 		}
-		return nodes
+		return trees
 	}
 
 }
 
-func (node *Node) Add(new *Node) (err error) {
+func (tree *Tree) Add(new *Tree) (err error) {
 
-	match, n := node.findNode(new.value)
-	if match {
-		err = errors.New("The value exist in system")
-		return
+	// match, n := Tree.findTree(new.value)
+	// if match {
+	// 	err = errors.New("The value exist in system")
+	// 	return
+	// }
+
+	if tree.value > new.value {
+		if tree.left != nil {
+			tree.left.Add(new)
+		} else {
+			tree.left = new
+		}
 	}
-	if n.value > new.value {
-		n.left = new
+	if tree.value < new.value {
+		if tree.right != nil {
+			tree.right.Add(new)
+		} else {
+			tree.right = new
+		}
 	}
-	if n.value < new.value {
-		n.right = new
-	}
+	err = errors.New("The value exist in system")
 	return
 }
 
-func (node *Node) findNode(value int) (match bool, n *Node) {
-	if node.value == value {
-		return true, node
+func (tree *Tree) findTree(value int) (match bool, n *Tree) {
+	if tree.value == value {
+		return true, tree
 	}
-	if node.value > value {
-		if node.left == nil {
-			return false, node
+	if tree.value > value {
+		if tree.left == nil {
+			return false, tree
 		}
-		return node.left.findNode(value)
+		return tree.left.findTree(value)
 	}
 
-	if node.value < value {
-		if node.right == nil {
-			return false, node
+	if tree.value < value {
+		if tree.right == nil {
+			return false, tree
 		}
-		return node.right.findNode(value)
+		return tree.right.findTree(value)
 	}
 
 	return false, nil
@@ -98,19 +109,27 @@ func (node *Node) findNode(value int) (match bool, n *Node) {
 
 func BinaryTree() {
 
-	root := Node{}
+	root := Tree{}
 	root.value = 10
 
-	root.Add(&Node{value: 11})
-	root.Add(&Node{value: 15})
-	root.Add(&Node{value: 9})
-
-	root.Add(&Node{value: 16})
-	root.Add(&Node{value: 1})
-	root.Add(&Node{value: 5})
-	root.Add(&Node{value: 6})
-	root.Add(&Node{value: 12})
-	root.Add(&Node{value: 4})
+	root.Add(&Tree{value: 5})
+	root.Add(&Tree{value: 7})
+	root.Add(&Tree{value: 2})
+	root.Add(&Tree{value: 1})
+	root.Add(&Tree{value: 3})
+	root.Add(&Tree{value: 4})
+	root.Add(&Tree{value: 6})
+	root.Add(&Tree{value: 8})
+	root.Add(&Tree{value: 9})
+	root.Add(&Tree{value: 15})
+	root.Add(&Tree{value: 13})
+	root.Add(&Tree{value: 17})
+	root.Add(&Tree{value: 11})
+	root.Add(&Tree{value: 12})
+	root.Add(&Tree{value: 14})
+	root.Add(&Tree{value: 16})
+	root.Add(&Tree{value: 18})
+	root.Add(&Tree{value: 19})
 
 	fmt.Println("Done.", root.String())
 }
