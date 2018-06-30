@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
-	"slice"
+	_ "b"
+	_ "c"
+	_ "a"
 )
 
 type Name struct {
@@ -234,7 +236,9 @@ func main() {
 	// panicRecover.PanicAndRecover()
 	// osfunc.RuntimeEnv()
 	// osfunc.RequiredVersion()
-	fmt.Println("NodeTree")
+	// fmt.Println("NodeTree")
+	// slice.Copy()
 
-	slice.Copy()
+	// compile.A()
+	// compile.B()
 }
