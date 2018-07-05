@@ -49,5 +49,5 @@ func Reflection() {
 		fmt.Printf("with type: %s ", rB.Field(i).Type())
 		fmt.Printf("and value %v\n", rB.Field(i).Interface())
 	}
- 
+
 }
