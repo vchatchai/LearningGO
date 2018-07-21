@@ -1,10 +1,11 @@
 package main
 
 import (
-	"fmt"
+	_ "a"
 	_ "b"
 	_ "c"
-	_ "a"
+	"fmt"
+	"syscaller"
 )
 
 type Name struct {
@@ -241,4 +242,16 @@ func main() {
 
 	// compile.A()
 	// compile.B()
+	// signals.HandleTwo()
+	// signals.HandleAll()
+	// files.Cat()
+	// files.GoFind()
+
+	// filepath.Walk(".", func(path string, info os.FileInfo, err error) error {
+	// 	fmt.Println(path)
+	// 	return nil
+	// })
+
+	err := syscaller.Ptrace("echo", "Mastering GO!")
+	fmt.Println(err)
 }
