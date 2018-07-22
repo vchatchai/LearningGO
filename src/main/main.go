@@ -252,6 +252,9 @@ func main() {
 	// 	return nil
 	// })
 
-	err := syscaller.Ptrace("echo", "Mastering GO!")
-	fmt.Println(err)
+	// err := syscaller.Ptrace("echo", "Mastering GO!")
+	// fmt.Println(err)
+
+	syscaller.Trace("ls", "/tmp/")
+
 }
