@@ -1,0 +1,16 @@
+package routine
+
+import "testing"
+
+func TestForgetMutex(t *testing.T) {
+	tests := []struct {
+		name string
+	}{
+		{"TestForgetMutex"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			ForgetMutex()
+		})
+	}
+}
