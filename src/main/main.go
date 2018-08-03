@@ -1,11 +1,8 @@
 package main
 
 import (
-	_ "a"
-	_ "b"
-	_ "c"
 	"fmt"
-	"syscaller"
+	"routine"
 )
 
 type Name struct {
@@ -255,6 +252,7 @@ func main() {
 	// err := syscaller.Ptrace("echo", "Mastering GO!")
 	// fmt.Println(err)
 
-	syscaller.Trace("ls", "/tmp/")
+	// syscaller.Trace("ls", "/tmp/")
+	routine.RacingCondition(10)
 
 }

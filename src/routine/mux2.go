@@ -21,7 +21,7 @@ func change(i int) {
 	m.Unlock()
 }
 
-func read() int {
+func readMonitor() int {
 	m.Lock()
 	a := v1
 	m.Unlock()
@@ -32,16 +32,16 @@ func Mutex2() {
 	var waitGroup sync.WaitGroup
 
 	numGR := 21
-	fmt.Printf("%d", read())
+	fmt.Printf("%d", readMonitor())
 	for i := 0; i < numGR; i++ {
 		waitGroup.Add(1)
 		go func(i int) {
 			defer waitGroup.Done()
 			change(i)
-			fmt.Printf("-> %d", read())
+			fmt.Printf("-> %d", readMonitor())
 		}(i)
 	}
 	waitGroup.Wait()
-	fmt.Printf("->%d\n", read())
+	fmt.Printf("->%d\n", readMonitor())
 
 }
