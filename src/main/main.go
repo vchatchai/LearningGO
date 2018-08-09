@@ -1,8 +1,8 @@
 package main
 
 import (
+	"contexts"
 	"fmt"
-	"routine"
 )
 
 type Name struct {
@@ -253,6 +253,7 @@ func main() {
 	// fmt.Println(err)
 
 	// syscaller.Trace("ls", "/tmp/")
-	routine.RacingCondition(10)
+	// routine.RacingCondition(10)
+	contexts.SlowWWWW()
 
 }
