@@ -1,8 +1,8 @@
 package main
 
 import (
-	"contexts"
 	"fmt"
+	"profiling"
 )
 
 type Name struct {
@@ -254,6 +254,8 @@ func main() {
 
 	// syscaller.Trace("ls", "/tmp/")
 	// routine.RacingCondition(10)
-	contexts.SlowWWWW()
+	// contexts.SlowWWWW()
+	// profiling.ProfileMe()
+	profiling.BetterProfile()
 
 }
