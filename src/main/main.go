@@ -256,6 +256,6 @@ func main() {
 	// routine.RacingCondition(10)
 	// contexts.SlowWWWW()
 	// profiling.ProfileMe()
-	profiling.BetterProfile()
-
+	// profiling.BetterProfile()
+	profiling.GOGC()
 }

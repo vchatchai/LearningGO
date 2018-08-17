@@ -50,7 +50,7 @@ func N2(n int) bool {
 	}
 	return true
 }
-func ProfileMe() {
+func lsProfileMe() {
 	cpuFile, err := os.Create("/tmp/cpuProfile.out")
 	if err != nil {
 		fmt.Println(err)
