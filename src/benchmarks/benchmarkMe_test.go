@@ -94,16 +94,16 @@ func benchmarkfibo3(b *testing.B, n int) {
 	result = r
 }
 
-func Benchmark30fibo1(b *testing.B) {
-	benchmarkfibo1(b, 30)
-}
-func Benchmark30fibo2(b *testing.B) {
-	benchmarkfibo2(b, 30)
-}
-func Benchmark30fibo3(b *testing.B) {
-	benchmarkfibo3(b, 30)
-}
-
+// func Benchmark30fibo1(b *testing.B) {
+// 	benchmarkfibo1(b, 30)
+// }
+// func Benchmark30fibo2(b *testing.B) {
+// 	benchmarkfibo2(b, 30)
+// }
+// func Benchmark30fibo3(b *testing.B) {
+// 	benchmarkfibo3(b, 30)
+// }
+//
 func Benchmark50fibo1(b *testing.B) {
 	benchmarkfibo1(b, 50)
 }
@@ -113,3 +113,18 @@ func Benchmark50fibo2(b *testing.B) {
 func Benchmark50fibo3(b *testing.B) {
 	benchmarkfibo3(b, 50)
 }
+
+// func BenchmarkProfiling(b *testing.B) {
+// 	cpuFile, err := os.Create("/tmp/cpuProfile.out")
+// 	if err != nil {
+// 		b.Error(err)
+// 	}
+
+// 	pprof.StartCPUProfile(cpuFile)
+// 	defer pprof.StopCPUProfile()
+
+// 	benchmarkfibo1(b, 50)
+// 	benchmarkfibo2(b, 50)
+// 	benchmarkfibo3(b, 50)
+
+// }
