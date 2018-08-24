@@ -1,8 +1,8 @@
 package main
 
 import (
-	compilation "cross-compilation"
 	"fmt"
+	"profiling"
 )
 
 type Name struct {
@@ -258,5 +258,7 @@ func main() {
 	// profiling.ProfileMe()
 	// profiling.BetterProfile()
 	// profiling.GOGC()
-	compilation.XCompile()
+	// compilation.XCompile()(
+	// web.WWW()
+	profiling.WWW()
 }
