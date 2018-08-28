@@ -94,6 +94,14 @@ func benchmarkfibo3(b *testing.B, n int) {
 	result = r
 }
 
+func benchmarkfibo4(b *testing.B, n int) {
+	var r int
+	for i := 0; i < b.N; i++ {
+		r = fibo4(n)
+	}
+	result = r
+}
+
 // func Benchmark30fibo1(b *testing.B) {
 // 	benchmarkfibo1(b, 30)
 // }
@@ -112,6 +120,9 @@ func Benchmark50fibo2(b *testing.B) {
 }
 func Benchmark50fibo3(b *testing.B) {
 	benchmarkfibo3(b, 50)
+}
+func Benchmark50fibo4(b *testing.B) {
+	benchmarkfibo4(b, 50)
 }
 
 // func BenchmarkProfiling(b *testing.B) {

@@ -30,3 +30,16 @@ func fibo3(n int) int {
 	}
 	return fn[n]
 }
+
+func fibo4(n int) int {
+	if n <= 2 {
+		return 1
+	}
+	nm1 := 1
+	nm2 := 1
+	for i := 3; i <= n; i++ {
+		nm1, nm2 = nm2, nm1+nm2
+	}
+
+	return nm2
+}
