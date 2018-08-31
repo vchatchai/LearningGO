@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"profiling"
+	"web"
 )
 
 type Name struct {
@@ -260,5 +260,6 @@ func main() {
 	// profiling.GOGC()
 	// compilation.XCompile()(
 	// web.WWW()
-	profiling.WWW()
+	// profiling.WWW()
+	web.KVWeb()
 }
