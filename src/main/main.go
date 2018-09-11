@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"web"
+	"network"
 )
 
 type Name struct {
@@ -261,5 +261,6 @@ func main() {
 	// compilation.XCompile()(
 	// web.WWW()
 	// profiling.WWW()
-	web.KVWeb()
+	// web.KVWeb()
+	network.ServerTimeOut()
 }
