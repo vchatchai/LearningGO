@@ -262,5 +262,8 @@ func main() {
 	// web.WWW()
 	// profiling.WWW()
 	// web.KVWeb()
-	network.ServerTimeOut()
+	// network.ServerTimeOut()
+	// network.TCPserver(":8001")
+	// network.TCPclient("localhost:8001", "test")
+	network.UDPClient("127.0.0.1:8001")
 }
