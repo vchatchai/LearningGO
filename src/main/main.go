@@ -267,5 +267,7 @@ func main() {
 	// network.TCPclient("localhost:8001", "test")
 	// network.UDPClient("127.0.0.1:8001")
 	// network.FiboTCP(":8001")
-	network.KVTCP(":8001")
+	// network.KVTCP(":8001")
+	// network.RPCServer(":8001")
+	network.LowLevel("127.0.0.1")
 }
